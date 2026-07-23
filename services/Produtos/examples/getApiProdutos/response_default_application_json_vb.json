@@ -1,0 +1,101 @@
+{
+    "content": [
+        {
+            "categoria": {
+                "descricao": "Categoria de Laticinios",
+                "id": 2,
+                "nome": "Laticinios"
+            },
+            "descricao": "Leita longa vida 1L",
+            "estoque": 293,
+            "estoqueMinimo": null,
+            "fornecedor": {
+                "cidade": "Espirito Santo",
+                "cnpj": "60409075000155",
+                "email": "mat@gmail.com",
+                "estado": "SP",
+                "id": 1,
+                "nomeFantasia": "Ibuna",
+                "razaoSocial": "Ibituruna Ltda",
+                "telefone": "3133334444"
+            },
+            "id": 3,
+            "nome": "Leite longa vida",
+            "precoCompra": 6.2,
+            "precoVenda": 9
+        },
+        {
+            "categoria": {
+                "descricao": "Categoria de Laticinios",
+                "id": 2,
+                "nome": "Laticinios"
+            },
+            "descricao": "Queijo minas frescal",
+            "estoque": 50,
+            "estoqueMinimo": 10,
+            "fornecedor": {
+                "cidade": "Espirito Santo",
+                "cnpj": "60409075000155",
+                "email": "mat@gmail.com",
+                "estado": "SP",
+                "id": 1,
+                "nomeFantasia": "Ibuna",
+                "razaoSocial": "Ibituruna Ltda",
+                "telefone": "3133334444"
+            },
+            "id": 19,
+            "nome": "Queijo Minas 500g",
+            "precoCompra": 8.5,
+            "precoVenda": 12.9
+        },
+        {
+            "categoria": {
+                "descricao": "Categoria de Laticinios",
+                "id": 2,
+                "nome": "Laticinios"
+            },
+            "descricao": "Leite ibituruna 1l",
+            "estoque": 157,
+            "estoqueMinimo": 10,
+            "fornecedor": {
+                "cidade": "Espirito Santo",
+                "cnpj": "60409075000155",
+                "email": "mat@gmail.com",
+                "estado": "SP",
+                "id": 1,
+                "nomeFantasia": "Ibuna",
+                "razaoSocial": "Ibituruna Ltda",
+                "telefone": "3133334444"
+            },
+            "id": 4,
+            "nome": "Leita longa Ibituruna",
+            "precoCompra": 4.25,
+            "precoVenda": 5.6
+        }
+    ],
+    "empty": false,
+    "first": true,
+    "last": true,
+    "number": 0,
+    "numberOfElements": 3,
+    "pageable": {
+        "offset": 0,
+        "pageNumber": 0,
+        "pageSize": 10,
+        "paged": true,
+        "sort": {
+            "empty": true,
+            "sorted": false,
+            "unsorted": true
+        },
+        "unpaged": false
+    },
+    "size": 10,
+    "sort": {
+        "empty": true,
+        "sorted": false,
+        "unsorted": true
+    },
+    "totalElements": 3,
+    "totalPages": 1
+}

@@ -1,0 +1,154 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "KMPG API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/KMPG-API",
+            "description": "KMPG API"
+        }
+    ],
+    "paths": {
+        "/api/fornecedores": {
+            "get": {
+                "operationId": "getApiFornecedores",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiFornecedores"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getApiFornecedores/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetApiFornecedores": {
+                "type": "object",
+                "properties": {
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "cidade": {
+                                    "type": "string"
+                                },
+                                "cnpj": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string"
+                                },
+                                "estado": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "nomeFantasia": {
+                                    "type": "string"
+                                },
+                                "razaoSocial": {
+                                    "type": "string"
+                                },
+                                "telefone": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "empty": {
+                        "type": "boolean"
+                    },
+                    "first": {
+                        "type": "boolean"
+                    },
+                    "last": {
+                        "type": "boolean"
+                    },
+                    "number": {
+                        "type": "integer"
+                    },
+                    "numberOfElements": {
+                        "type": "integer"
+                    },
+                    "pageable": {
+                        "type": "object",
+                        "properties": {
+                            "offset": {
+                                "type": "integer"
+                            },
+                            "pageNumber": {
+                                "type": "integer"
+                            },
+                            "pageSize": {
+                                "type": "integer"
+                            },
+                            "paged": {
+                                "type": "boolean"
+                            },
+                            "sort": {
+                                "type": "object",
+                                "properties": {
+                                    "empty": {
+                                        "type": "boolean"
+                                    },
+                                    "sorted": {
+                                        "type": "boolean"
+                                    },
+                                    "unsorted": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "unpaged": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "size": {
+                        "type": "integer"
+                    },
+                    "sort": {
+                        "type": "object",
+                        "properties": {
+                            "empty": {
+                                "type": "boolean"
+                            },
+                            "sorted": {
+                                "type": "boolean"
+                            },
+                            "unsorted": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "totalElements": {
+                        "type": "integer"
+                    },
+                    "totalPages": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

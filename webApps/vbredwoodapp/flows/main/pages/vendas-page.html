@@ -1,0 +1,81 @@
+<div class="oj-flex oj-sm-flex-direction-column"
+     style=" box-sizing:border-box; gap:20px; padding:40px 60px;">
+
+  <div class="oj-flex oj-sm-align-items-center" style="margin-bottom: 10px;">
+    <oj-button
+      display="icons"
+      chroming="borderless"
+      title="Voltar" on-oj-action="[[$listeners.buttonAction3]]">
+
+      <span slot="startIcon" class="oj-ux-ico-arrow-left" style="color:white;" aria-label="Voltar"></span>
+     </oj-button>
+  </div>
+  <div class="oj-flex oj-sm-align-items-center oj-sm-justify-content-space-between"
+       style='width:100%; font-family:"Roboto", sans-serif;'>
+
+    <h1 class="oj-typography-heading-md oj-typography-bold"
+        style="margin:0; color:#F1F5F9; font-size:40px;">
+      Vendas
+    </h1>
+
+    <oj-button
+      label="Criar Pedido"
+      chroming="solid"
+      style="background:#FBBF24; color:white; border-radius:5px;"
+      on-oj-action="[[$listeners.buttonAction2]]">
+    </oj-button>
+
+  </div>
+
+  <!-- Busca -->
+  <div class="oj-flex" style="width:100%;">
+    <oj-input-search
+      value="{{ $variables.textoBusca }}"
+      placeholder="Digite o ID"
+      style="max-width:320px; width:100%;">
+    </oj-input-search>
+  </div>
+
+  <!-- Card da Tabela -->
+  <div class="oj-panel oj-panel-rounded-12"
+       style="background:#ffffff;
+              padding:16px;
+              box-shadow:0 10px 15px -3px rgba(0,0,0,0.2);
+              width:100%;
+              box-sizing:border-box;">
+
+    <oj-table
+      scroll-policy="loadMoreOnScroll"
+      data="[[$variables.vendasADP]]"
+      style="width:100%; height:400px;"
+      columns='[
+        {"headerText":"id","field":"id"},
+        {"headerText":"dataVenda","field":"dataVenda"},
+        {"headerText":"clienteNome","field":"clienteNome"},
+        {"headerText":"formaPagamento","field":"formaPagamento"},
+        {"headerText":"funcionarioNome","field":"funcionarioNome"},
+        {"headerText":"status","field":"status"},
+        {"headerText":"valorTotal","field":"valorTotal"},
+        {"headerText":"Ações","field":"","template":"Ações"}
+      ]'>
+
+      <template slot="Ações">
+        <oj-button
+          display="icons"
+          chroming="borderless"
+          on-oj-action="[[$listeners.buttonAction]]"
+          title="Excluir">
+
+          <span slot="startIcon"
+                class="oj-ux-ico-trash"
+                style="color:red;"></span>
+
+          Excluir
+        </oj-button>
+      </template>
+
+    </oj-table>
+
+  </div>
+
+</div>

@@ -1,0 +1,327 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "KMPG API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/KMPG-API",
+            "description": "KMPG API"
+        }
+    ],
+    "paths": {
+        "/api/vendas": {
+            "get": {
+                "operationId": "getApiVendas",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiVendas"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getApiVendas/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            },
+            "post": {
+                "operationId": "postApiVendas",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "create"
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostApiVendasRequest"
+                            },
+                            "examples": {
+                                "vb": {
+                                    "externalValue": "./examples/postApiVendas/request_application_json_vb.json"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/vendas/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "delete": {
+                "operationId": "deleteApiVendasId",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "delete"
+                }
+            }
+        },
+        "/api/vendas/kpis/produtos-mais-vendidos": {
+            "get": {
+                "operationId": "getApiVendasKpisProdutosMaisVendidos2",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "custom"
+                }
+            }
+        },
+        "/api/vendas/kpis/resumo-financeiro": {
+            "get": {
+                "operationId": "getApiVendasKpisResumoFinanceiro2",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiVendasKpisResumo-financeiro"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getApiVendasKpisResumoFinanceiro2/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "custom"
+                }
+            }
+        },
+        "/api/vendas/kpis/clientes-que-mais-compraram": {
+            "get": {
+                "operationId": "getApiVendasKpisClientesQueMaisCompraram",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "custom"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetApiVendas": {
+                "type": "object",
+                "properties": {
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "dataVenda": {
+                                    "type": "string"
+                                },
+                                "valorTotal": {
+                                    "type": "number"
+                                },
+                                "desconto": {
+                                    "type": "integer"
+                                },
+                                "valorFinal": {
+                                    "type": "number"
+                                },
+                                "formaPagamento": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "observacoes": {
+                                    "type": "string"
+                                },
+                                "clienteId": {
+                                    "type": "integer"
+                                },
+                                "clienteNome": {
+                                    "type": "string"
+                                },
+                                "funcionarioId": {
+                                    "type": "integer"
+                                },
+                                "funcionarioNome": {
+                                    "type": "string"
+                                },
+                                "itens": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "produtoId": {
+                                                "type": "integer"
+                                            },
+                                            "produtoNome": {
+                                                "type": "string"
+                                            },
+                                            "quantidade": {
+                                                "type": "integer"
+                                            },
+                                            "precoUnitario": {
+                                                "type": "number"
+                                            },
+                                            "subtotal": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                     }
+                    },
+                    "empty": {
+                        "type": "boolean"
+                    },
+                    "first": {
+                        "type": "boolean"
+                    },
+                    "last": {
+                        "type": "boolean"
+                    },
+                    "number": {
+                        "type": "integer"
+                    },
+                    "numberOfElements": {
+                        "type": "integer"
+                    },
+                    "pageable": {
+                        "type": "object",
+                        "properties": {
+                            "offset": {
+                                "type": "integer"
+                            },
+                            "pageNumber": {
+                                "type": "integer"
+                            },
+                            "pageSize": {
+                                "type": "integer"
+                            },
+                            "paged": {
+                                "type": "boolean"
+                            },
+                            "sort": {
+                                "type": "object",
+                                "properties": {
+                                    "empty": {
+                                        "type": "boolean"
+                                    },
+                                    "sorted": {
+                                        "type": "boolean"
+                                    },
+                                    "unsorted": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "unpaged": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "size": {
+                        "type": "integer"
+                    },
+                    "sort": {
+                        "type": "object",
+                        "properties": {
+                            "empty": {
+                                "type": "boolean"
+                            },
+                            "sorted": {
+                                "type": "boolean"
+                            },
+                            "unsorted": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "totalElements": {
+                        "type": "integer"
+                    },
+                    "totalPages": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "GetApiVendasKpisResumo-financeiro": {
+                "type": "object",
+                "properties": {
+                    "valorBrutoVendas": {
+                        "type": "integer"
+                    },
+                    "valorDescontos": {
+                        "type": "integer"
+                    },
+                    "valorLiquidoVendas": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "PostApiVendasRequest": {
+                "type": "object",
+                "properties": {
+                    "clienteId": {
+                        "type": "integer"
+                    },
+                    "funcionarioId": {
+                        "type": "integer"
+                    },
+                    "formaPagamento": {
+                        "type": "string"
+                    },
+                    "desconto": {
+                        "type": "integer"
+                    },
+                    "observacoes": {
+                        "type": "string"
+                    },
+                    "itens": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "produtoId": {
+                                    "type": "integer"
+                                },
+                                "quantidade": {
+                                    "type": "integer"
+                                },
+                                "precoUnitario": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

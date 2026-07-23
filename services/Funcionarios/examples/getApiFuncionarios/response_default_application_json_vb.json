@@ -1,0 +1,105 @@
+{
+    "content": [
+        {
+            "bairro": "Centro",
+            "cargo": {
+                "ativo": true,
+                "descricao": "Cargo de analista de crédito bancário",
+                "id": 1,
+                "nome": "Analista",
+                "salarioBase": 2000
+            },
+            "cep": "35160-000",
+            "cidade": "Ipatinga",
+            "complemento": "Casa",
+            "cpf": "12345678901",
+            "dataAdmissao": "2026-07-15",
+            "dataCadastro": "2026-07-20",
+            "dataDemissao": null,
+            "dataNascimento": "1995-05-20",
+            "departamento": {
+                "ativo": true,
+                "descricao": "Dpto de vendas",
+                "id": 1,
+                "nome": "Vendas"
+            },
+            "email": "joao.silva@email.com",
+            "estado": "MG",
+            "estadoCivil": "CASADO",
+            "id": 2,
+            "logradouro": "Rua Principal",
+            "matricula": "FUNC0001",
+            "nome": "João da Silva",
+            "numero": "150",
+            "rg": "MG1234567",
+            "salario": 4500,
+            "sexo": "MASCULINO",
+            "status": "ATIVO",
+            "telefone": "(31) 99999-8888",
+            "ultimaAtualizacao": "2026-07-20"
+        },
+        {
+            "bairro": "Centro",
+            "cargo": {
+                "ativo": true,
+                "descricao": "Cargo de analista de crédito bancário",
+                "id": 1,
+                "nome": "Analista",
+                "salarioBase": 2000
+            },
+            "cep": "35160-000",
+            "cidade": "Ipatinga",
+            "complemento": "Casa",
+            "cpf": "23223232332",
+            "dataAdmissao": "2026-07-15",
+            "dataCadastro": "2026-07-22",
+            "dataDemissao": null,
+            "dataNascimento": "1995-05-20",
+            "departamento": {
+                "ativo": true,
+                "descricao": "Dpto de vendas",
+                "id": 1,
+                "nome": "Vendas"
+            },
+            "email": "joao.silva@email.com",
+            "estado": "MG",
+            "estadoCivil": "CASADO",
+            "id": 11,
+            "logradouro": "Rua Principal",
+            "matricula": "FUNC0001",
+            "nome": "Carlos",
+            "numero": "150",
+            "rg": "2332323223",
+            "salario": 4500,
+            "sexo": "MASCULINO",
+            "status": "ATIVO",
+            "telefone": "(31) 99999-8888",
+            "ultimaAtualizacao": "2026-07-22"
+        }
+    ],
+    "empty": false,
+    "first": true,
+    "last": true,
+    "number": 0,
+    "numberOfElements": 2,
+    "pageable": {
+        "offset": 0,
+        "pageNumber": 0,
+        "pageSize": 10,
+        "paged": true,
+        "sort": {
+            "empty": true,
+            "sorted": false,
+            "unsorted": true
+        },
+        "unpaged": false
+    },
+    "size": 10,
+    "sort": {
+        "empty": true,
+        "sorted": false,
+        "unsorted": true
+    },
+    "totalElements": 2,
+    "totalPages": 1
+}

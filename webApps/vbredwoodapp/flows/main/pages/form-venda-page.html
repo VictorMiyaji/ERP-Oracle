@@ -1,0 +1,81 @@
+<!-- vb default-layout:flex -->
+<!-- Copyright (c) 2026, Oracle and/or its affiliates -->
+
+<div class="oj-flex oj-sm-flex-direction-column" style="width: 100%; box-sizing: border-box; gap: 24px; padding: 32px 40px; background-color: #0F172A; min-height: 100vh;">
+
+  <!-- 1. Topo: Botão Voltar + Título -->
+  <div class="oj-flex oj-sm-align-items-center" style="gap: 12px; width: 100%;">
+    <oj-button display="icons" chroming="borderless" title="Voltar" on-oj-action="[[$listeners.buttonActionVoltar]]">
+      <span slot="startIcon" class="oj-ux-ico-arrow-left" style="font-size: 20px; color: #F8FAFC;"></span>
+      Voltar
+    </oj-button>
+    <h1 class="oj-typography-heading-md oj-typography-bold" style="margin: 0; color: #FBBF24; font-size: 24px;">
+      Novo Pedido de Venda
+    </h1>
+  </div>
+
+  <!-- 2. Formulário Centralizado -->
+  <div class="oj-flex oj-sm-flex-direction-column" style="background: #ffffff; border-radius: 14px; padding: 32px; width: 100%; box-sizing: border-box; gap: 20px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);">
+
+    <!-- Cliente -->
+    <oj-select-single label-hint="Cliente"
+                      data="[[$variables.clienteSDP]]"
+                      item-text="nome"
+                      value="{{ $variables.pedidoVenda.clienteId }}"
+                      style="width: 100%;">
+    </oj-select-single>
+
+    <!-- Funcionário -->
+    <oj-select-single label-hint="Funcionário"
+                      data="[[$variables.funcionarioSDP]]"
+                      item-text="nome"
+                      value="{{ $variables.pedidoVenda.funcionarioId }}"
+                      style="width: 100%;">
+    </oj-select-single>
+
+    <!-- Forma de Pagamento -->
+    <oj-input-text label-hint="Forma de Pagamento (Ex: DINHEIRO, PIX, CARTAO)"
+                   value="{{ $variables.pedidoVenda.formaPagamento }}"
+                   style="width: 100%;">
+    </oj-input-text>
+
+    <!-- Desconto -->
+    <oj-input-number label-hint="Desconto"
+                     value="{{ $variables.pedidoVenda.desconto }}"
+                     min="0"
+                     style="width: 100%;">
+    </oj-input-number>
+
+    <!-- Bloco de Itens do Pedido (Produtos) -->
+    <div class="oj-flex oj-sm-flex-direction-column" style="border: 1px solid #E4E4E7; border-radius: 10px; padding: 16px; gap: 14px; background: #FAFAFA;">
+      <span class="oj-typography-subheading-xs oj-typography-bold" style="color: #18181B;">Itens do Pedido</span>
+      
+      <oj-bind-for-each data="[[$variables.pedidoVenda.itens]]">
+        <template data-oj-as="item">
+          
+  <oj-select-single label-hint="Produto" data="[[$variables.produtoSDP]]" item-text="nome"
+    value="{{ $current.data.produtoId }}" style="width: 100%;">
+            </oj-select-single>
+  <oj-input-number label-hint="Preço Unitário" value="{{ $current.data.precoUnitario }}" min="0" style="width: 100%;">
+            </oj-input-number>
+  <oj-input-number label-hint="Quantidade" value="{{ $current.data.quantidade }}" min="1" style="width: 100%;">
+            </oj-input-number>
+        </template>
+      </oj-bind-for-each>
+    </div>
+
+    <!-- Observações -->
+    <oj-text-area label-hint="Observações"
+                  value="{{ $variables.pedidoVenda.observacoes }}"
+                  style="width: 100%;">
+    </oj-text-area>
+
+    <!-- Botão de Ação (Gerar Venda) -->
+    <div class="oj-flex" style="margin-top: 8px;">
+      <oj-button label="Gerar Venda" chroming="solid" on-oj-action="[[$listeners.buttonAction]]">
+      </oj-button>
+    </div>
+
+  </div>
+
+</div>

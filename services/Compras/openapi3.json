@@ -1,0 +1,622 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "KMPG API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/KMPG-API",
+            "description": "KMPG API"
+        }
+    ],
+    "paths": {
+        "/api/compras": {
+            "get": {
+                "operationId": "getApiCompras",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiCompras"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getApiCompras/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                },
+                "parameters": [
+                ]
+            },
+            "post": {
+                "operationId": "postApiCompras",
+                "responses": {
+                    "default": {
+                        "description": "Default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostApiComprasResponse"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "externalValue": "./examples/postApiCompras/response_default_application_json_vb.json",
+                                        "summary": "Example stored by VB User"
+                                    }
+                                }
+                            }
+                        }
+                    }
+               },
+                "x-vb": {
+                    "actionHint": "create"
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostApiComprasRequest"
+                            },
+                            "examples": {
+                                "vb": {
+                                    "summary": "Example stored by VB User",
+                                    "externalValue": "./examples/postApiCompras/request_application_json_vb.json"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/compras/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "delete": {
+                "operationId": "deleteApiComprasId",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "delete"
+                }
+            }
+        },
+        "/api/compras/kpis/valorTotalCompras": {
+            "parameters": [],
+            "get": {
+                "operationId": "getApiComprasKpisValorTotalCompras",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiComprasKpisValorTotalCompras"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getApiComprasKpisValorTotalCompras/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "custom"
+                }
+            }
+        },
+        "/api/compras/kpis/FornecedoresComMaisCompras": {
+            "get": {
+                "operationId": "getApiComprasKpisFornecedoresComMaisCompras2",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiComprasKpisFornecedoresComMaisCompras"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getApiComprasKpisFornecedoresComMaisCompras2/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "custom"
+                }
+            }
+        },
+        "/api/compras/kpis/produtos-mais-comprados": {
+            "get": {
+                "operationId": "getApiComprasKpisProdutosMaisComprados",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiComprasKpisProdutos-mais-comprados"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getApiComprasKpisProdutosMaisComprados/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "custom"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetApiCompras": {
+                "type": "object",
+                "properties": {
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "dataCompra": {
+                                    "type": "string"
+                                },
+                                "fornecedorId": {
+                                    "type": "integer"
+                                },
+                                "fornecedorNome": {
+                                    "type": "string"
+                                },
+                                "funcionarioId": {
+                                    "type": "integer"
+                                },
+                                "funcionarioNome": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "observacoes": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "valorTotal": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    },
+                    "empty": {
+                        "type": "boolean"
+                    },
+                    "first": {
+                        "type": "boolean"
+                    },
+                    "last": {
+                        "type": "boolean"
+                    },
+                    "number": {
+                        "type": "integer"
+                    },
+                    "numberOfElements": {
+                        "type": "integer"
+                    },
+                    "pageable": {
+                        "type": "object",
+                        "properties": {
+                            "offset": {
+                                "type": "integer"
+                            },
+                            "pageNumber": {
+                                "type": "integer"
+                            },
+                            "pageSize": {
+                                "type": "integer"
+                            },
+                            "paged": {
+                                "type": "boolean"
+                            },
+                            "sort": {
+                                "type": "object",
+                                "properties": {
+                                    "empty": {
+                                        "type": "boolean"
+                                    },
+                                    "sorted": {
+                                        "type": "boolean"
+                                    },
+                                    "unsorted": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "unpaged": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "size": {
+                        "type": "integer"
+                    },
+                    "sort": {
+                        "type": "object",
+                        "properties": {
+                            "empty": {
+                                "type": "boolean"
+                            },
+                            "sorted": {
+                                "type": "boolean"
+                            },
+                            "unsorted": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "totalElements": {
+                        "type": "integer"
+                    },
+                    "totalPages": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "GetApiComprasKpisValorTotalCompras": {
+                "type": "object",
+                "properties": {
+                    "totalCompras": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "GetApiComprasKpisFornecedoresComMaisCompras": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "fornecedorId": {
+                            "type": "integer"
+                        },
+                        "fornecedorNome": {
+                            "type": "string"
+                        },
+                        "quantidadeCompras": {
+                            "type": "integer"
+                        },
+                        "valorTotalCompras": {
+                            "type": "number"
+                        }
+                    }
+                }
+            },
+            "GetApiComprasKpisProdutos-mais-comprados": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "produtoId": {
+                            "type": "integer"
+                        },
+                        "produtoNome": {
+                            "type": "string"
+                        },
+                        "quantidadeComprada": {
+                            "type": "integer"
+                        },
+                        "valorTotalComprado": {
+                            "type": "number"
+                        }
+                    }
+                }
+            },
+            "PostApiComprasRequest": {
+                "type": "object",
+                "properties": {
+
+                    "fornecedorId": {
+                        "type": "integer"
+                    },
+                    "funcionarioId": {
+                        "type": "integer"
+                    },
+                    "observacoes": {
+                        "type": "string"
+                    },
+                    "itens": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "produtoId": {
+                                    "type": "integer"
+                                },
+                                "quantidade": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "PostApiComprasResponse": {
+                "type": "object",
+                "properties": {
+                    "dataCompra": {
+                        "type": "string"
+                    },
+                    "fornecedor": {
+                        "type": "object",
+                        "properties": {
+                            "cidade": {
+                                "type": "string"
+                            },
+                            "cnpj": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "estado": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "integer"
+                            },
+                            "nomeFantasia": {
+                                "type": "string"
+                            },
+                            "razaoSocial": {
+                                "type": "string"
+                            },
+                            "telefone": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "funcionario": {
+                        "type": "object",
+                        "properties": {
+                            "bairro": {
+                                "type": "string"
+                            },
+                            "cargo": {
+                                "type": "object",
+                                "properties": {
+                                    "ativo": {
+                                        "type": "boolean"
+                                    },
+                                    "descricao": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "salarioBase": {
+                                        "type": "integer"
+                                    }
+                                }
+                            },
+                            "cep": {
+                                "type": "string"
+                            },
+                            "cidade": {
+                                "type": "string"
+                            },
+                            "complemento": {
+                                "type": "string"
+                            },
+                            "cpf": {
+                                "type": "string"
+                            },
+                            "dataAdmissao": {
+                                "type": "string"
+                            },
+                            "dataCadastro": {
+                                "type": "string"
+                            },
+                            "dataDemissao": {
+                                "nullable": true
+                            },
+                            "dataNascimento": {
+                                "type": "string"
+                            },
+                            "departamento": {
+                                "type": "object",
+                                "properties": {
+                                    "ativo": {
+                                        "type": "boolean"
+                                    },
+                                    "descricao": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "nome": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "estado": {
+                                "type": "string"
+                            },
+                            "estadoCivil": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "integer"
+                            },
+                            "logradouro": {
+                                "type": "string"
+                            },
+                            "matricula": {
+                                "type": "string"
+                            },
+                            "nome": {
+                                "type": "string"
+                            },
+                            "numero": {
+                                "type": "string"
+                            },
+                            "rg": {
+                                "type": "string"
+                            },
+                            "salario": {
+                                "type": "integer"
+                            },
+                            "sexo": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "telefone": {
+                                "type": "string"
+                            },
+                            "ultimaAtualizacao": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "itens": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "produto": {
+                                    "type": "object",
+                                    "properties": {
+                                        "categoria": {
+                                            "type": "object",
+                                            "properties": {
+                                                "descricao": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "nome": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "descricao": {
+                                            "type": "string"
+                                        },
+                                        "estoque": {
+                                            "type": "integer"
+                                        },
+                                        "estoqueMinimo": {
+                                            "nullable": true
+                                        },
+                                        "fornecedor": {
+                                            "type": "object",
+                                            "properties": {
+                                                "cidade": {
+                                                    "type": "string"
+                                                },
+                                                "cnpj": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
+                                                },
+                                                "estado": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "nomeFantasia": {
+                                                    "type": "string"
+                                                },
+                                                "razaoSocial": {
+                                                    "type": "string"
+                                                },
+                                                "telefone": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "nome": {
+                                            "type": "string"
+                                        },
+                                        "precoCompra": {
+                                            "type": "number"
+                                        },
+                                        "precoVenda": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "quantidade": {
+                                    "type": "integer"
+                                },
+                                "subtotal": {
+                                    "type": "integer"
+                                },
+                                "valorUnitario": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    },
+                    "observacoes": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "valorTotal": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

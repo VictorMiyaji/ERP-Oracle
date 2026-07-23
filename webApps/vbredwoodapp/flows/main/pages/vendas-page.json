@@ -1,0 +1,109 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "textoBusca": {
+      "type": "string",
+      "defaultValue": "",
+      "onValueChanged": {
+        "chains": [
+          {
+            "parameters": {
+              "event": "{{ $event }}"
+            },
+            "chain": "filtrarVendasChain"
+          }
+        ]
+      }
+    },
+    "vendasADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "vendaItem",
+        "keyAttributes": "id"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "itemVenda": {
+      "id": "number",
+      "precoUnitario": "number",
+      "produtoId": "number",
+      "produtoNome": "string",
+      "quantidade": "number",
+      "subtotal": "number"
+    },
+    "vendaItem": {
+      "clienteId": "number",
+      "clienteNome": "string",
+      "dataVenda": "string",
+      "desconto": "number",
+      "formaPagamento": "string",
+      "funcionarioId": "number",
+      "funcionarioNome": "string",
+      "id": "string",
+      "itens": "itemVenda[]",
+      "observacoes": "string",
+      "status": "string",
+      "valorFinal": "number",
+      "valorTotal": "number"
+    }
+  },
+  "eventListeners": {
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "voltarParaHome",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chain": "carregarVendasChain"
+        }
+      ]
+    },
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "key": "{{ $current.key }}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "navigationPedidos",
+          "parameters": {
+            "event": "{{ $event }}",
+            "originalEvent": "{{ $event.detail.originalEvent }}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+    }
+  }
+}

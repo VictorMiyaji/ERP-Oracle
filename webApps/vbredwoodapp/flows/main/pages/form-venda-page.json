@@ -1,0 +1,260 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "clienteSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "get_clientes/getApiClientes2",
+        "responseType": "getApiClientes2",
+        "itemsPath": "content",
+        "keyAttributes": "id"
+      }
+    },
+    "funcionarioSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "Funcionarios/getApiFuncionarios",
+        "responseType": "getApiFuncionarios",
+        "itemsPath": "content",
+        "keyAttributes": "id"
+      }
+    },
+    "pedidoVenda": {
+      "type": "object",
+      "defaultValue": {
+        "clienteId": null,
+        "funcionarioId": null,
+        "dataVenda": "",
+        "desconto": 0,
+        "formaPagamento": "DINHEIRO",
+        "status": "CONCLUIDO",
+        "observacoes": "",
+        "itens": [
+          {
+            "produtoId": null,
+            "quantidade": 1,
+            "precoUnitario": 0
+          }
+        ]
+      }
+    },
+    "produtoSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "Produtos/getApiProdutos",
+        "responseType": "getApiProdutos",
+        "itemsPath": "content",
+        "keyAttributes": "id"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getApiClientes2": {
+      "endpoint": "getApiClientes2",
+      "service": "get_clientes",
+      "path": "response"
+    },
+    "@decorators.getApiFuncionarios": {
+      "endpoint": "getApiFuncionarios",
+      "service": "Funcionarios",
+      "path": "response"
+    },
+    "@decorators.getApiProdutos": {
+      "endpoint": "getApiProdutos",
+      "service": "Produtos",
+      "path": "response"
+    },
+    "getApiClientes2": {
+      "content": [
+        {
+          "cidade": "string",
+          "cpf": "string",
+          "email": "string",
+          "estado": "string",
+          "id": "number",
+          "nome": "string",
+          "telefone": "string"
+        }
+      ],
+      "empty": "boolean",
+      "first": "boolean",
+      "last": "boolean",
+      "number": "number",
+      "numberOfElements": "number",
+      "pageable": {
+        "offset": "number",
+        "paged": "boolean",
+        "pageNumber": "number",
+        "pageSize": "number",
+        "sort": {
+          "empty": "boolean",
+          "sorted": "boolean",
+          "unsorted": "boolean"
+        },
+        "unpaged": "boolean"
+      },
+      "size": "number",
+      "sort": {
+        "empty": "boolean",
+        "sorted": "boolean",
+        "unsorted": "boolean"
+      },
+      "totalElements": "number",
+      "totalPages": "number"
+    },
+    "getApiFuncionarios": {
+      "content": [
+        {
+          "bairro": "string",
+          "cargo": {
+            "ativo": "boolean",
+            "descricao": "string",
+            "id": "number",
+            "nome": "string",
+            "salarioBase": "number"
+          },
+          "cep": "string",
+          "cidade": "string",
+          "complemento": "string",
+          "cpf": "string",
+          "dataAdmissao": "string",
+          "dataCadastro": "string",
+          "dataDemissao": "any",
+          "dataNascimento": "string",
+          "departamento": {
+            "ativo": "boolean",
+            "descricao": "string",
+            "id": "number",
+            "nome": "string"
+          },
+          "email": "string",
+          "estado": "string",
+          "estadoCivil": "string",
+          "id": "number",
+          "logradouro": "string",
+          "matricula": "string",
+          "nome": "string",
+          "numero": "string",
+          "rg": "string",
+          "salario": "number",
+          "sexo": "string",
+          "status": "string",
+          "telefone": "string",
+          "ultimaAtualizacao": "string"
+        }
+      ],
+      "empty": "boolean",
+      "first": "boolean",
+      "last": "boolean",
+      "number": "number",
+      "numberOfElements": "number",
+      "pageable": {
+        "offset": "number",
+        "paged": "boolean",
+        "pageNumber": "number",
+        "pageSize": "number",
+        "sort": {
+          "empty": "boolean",
+          "sorted": "boolean",
+          "unsorted": "boolean"
+        },
+        "unpaged": "boolean"
+      },
+      "size": "number",
+      "sort": {
+        "empty": "boolean",
+        "sorted": "boolean",
+        "unsorted": "boolean"
+      },
+      "totalElements": "number",
+      "totalPages": "number"
+    },
+    "getApiProdutos": {
+      "content": [
+        {
+          "categoria": {
+            "descricao": "string",
+            "id": "number",
+            "nome": "string"
+          },
+          "descricao": "string",
+          "estoque": "number",
+          "estoqueMinimo": "number",
+          "fornecedor": {
+            "cidade": "string",
+            "cnpj": "string",
+            "email": "string",
+            "estado": "string",
+            "id": "number",
+            "nomeFantasia": "string",
+            "razaoSocial": "string",
+            "telefone": "string"
+          },
+          "id": "number",
+          "nome": "string",
+          "precoCompra": "number",
+          "precoVenda": "number"
+        }
+      ],
+      "empty": "boolean",
+      "first": "boolean",
+      "last": "boolean",
+      "number": "number",
+      "numberOfElements": "number",
+      "pageable": {
+        "offset": "number",
+        "paged": "boolean",
+        "pageNumber": "number",
+        "pageSize": "number",
+        "sort": {
+          "empty": "boolean",
+          "sorted": "boolean",
+          "unsorted": "boolean"
+        },
+        "unpaged": "boolean"
+      },
+      "size": "number",
+      "sort": {
+        "empty": "boolean",
+        "sorted": "boolean",
+        "unsorted": "boolean"
+      },
+      "totalElements": "number",
+      "totalPages": "number"
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      }
+
+    }
+  }
+}

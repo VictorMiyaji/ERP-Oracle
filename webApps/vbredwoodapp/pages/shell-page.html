@@ -1,0 +1,22 @@
+<!-- Copyright (c) 2026, Oracle and/or its affiliates -->
+
+<div id="pageContent" class="oj-web-applayout-page" style="background-color: #0F172A; min-height: 100vh; width: 100%; box-sizing: border-box;">
+    <div class="oj-web-applayout-content-nopad" style="width: 100%; max-width: 100%; box-sizing: border-box;">
+
+      <div class="oj-flex">
+        <oj-sp-messages-banner data="[[ $variables.messagesBannerADP ]]" class="oj-flex-item oj-sm-12 oj-md-12"
+          on-sp-close="[[$listeners.messagesBannerSpClose]]"
+          ></oj-sp-messages-banner>
+      </div>
+      
+      <oj-sp-messages-toast primary-text="[[ $variables.messageToast ]]" id="messageToast"></oj-sp-messages-toast>
+
+      <div class="oj-flex" style="width: 100%; margin: 0;">
+        <!-- Renders flow content -->
+        <oj-vb-content id="vbRouterContent" class="oj-flex-item" config="[[vbRouterFlow]]" style="width: 100%;">
+    
+        </oj-vb-content>
+      </div>
+
+    </div>
+</div>

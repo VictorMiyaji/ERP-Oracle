@@ -1,0 +1,151 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "KMPG API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/KMPG-API",
+            "description": "KMPG API"
+        }
+    ],
+    "paths": {
+        "/api/clientes": {
+            "get": {
+                "operationId": "getApiClientes2",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiClientes"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getApiClientes2/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetApiClientes": {
+                "type": "object",
+                "properties": {
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "cidade": {
+                                    "type": "string"
+                                },
+                                "cpf": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string"
+                                },
+                                "estado": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "nome": {
+                                    "type": "string"
+                                },
+                                "telefone": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "empty": {
+                        "type": "boolean"
+                    },
+                    "first": {
+                        "type": "boolean"
+                    },
+                    "last": {
+                        "type": "boolean"
+                    },
+                    "number": {
+                        "type": "integer"
+                    },
+                    "numberOfElements": {
+                        "type": "integer"
+                    },
+                    "pageable": {
+                        "type": "object",
+                        "properties": {
+                            "offset": {
+                                "type": "integer"
+                            },
+                            "pageNumber": {
+                                "type": "integer"
+                            },
+                            "pageSize": {
+                                "type": "integer"
+                            },
+                            "paged": {
+                                "type": "boolean"
+                            },
+                            "sort": {
+                                "type": "object",
+                                "properties": {
+                                    "empty": {
+                                        "type": "boolean"
+                                    },
+                                    "sorted": {
+                                        "type": "boolean"
+                                    },
+                                    "unsorted": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "unpaged": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "size": {
+                        "type": "integer"
+                    },
+                    "sort": {
+                        "type": "object",
+                        "properties": {
+                            "empty": {
+                                "type": "boolean"
+                            },
+                            "sorted": {
+                                "type": "boolean"
+                            },
+                            "unsorted": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "totalElements": {
+                        "type": "integer"
+                    },
+                    "totalPages": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

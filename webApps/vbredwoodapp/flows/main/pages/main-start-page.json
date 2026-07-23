@@ -1,0 +1,106 @@
+{
+
+  "title": "",
+  "description": "",
+  "variables": {
+    "totalCompras": {
+      "type": "number"
+    },
+    "totalVendas": {
+      "type": "number"
+    }
+  },
+  "metadata": {
+    "comprasGetApiComprasMetadata": {
+      "type": "vb/DynamicLayoutMetadataProviderDescriptor",
+      "defaultValue": {
+        "endpoint": "Compras/getApiCompras",
+        "metadataPath": "content"
+      }
+    }
+  },
+  "types": {},
+  "chains": {},
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain2",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "cardSpCardAction": {
+      "chains": [
+        {
+          "chain": "CardSpCardActionChain",
+          "parameters": {
+            "event": "{{$event}}"
+          }
+        }
+      ]
+    },
+    "cardSpCardAction2": {
+      "chains": [
+        {
+          "chain": "CardSpCardActionChain1",
+          "parameters": {
+            "event": "{{$event}}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chain": "vbEnterListener"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-highlight-text": {
+        "path": "ojs/ojhighlighttext"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-sp-card": {
+        "path": "oj-sp/card/loader"
+      }
+
+    }
+  },
+  "events": {}
+}

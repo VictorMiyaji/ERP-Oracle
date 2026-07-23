@@ -1,0 +1,87 @@
+{
+    "dataCompra": "2026-07-23T18:26:26.583331664",
+    "fornecedor": {
+        "cidade": "Espirito Santo",
+        "cnpj": "60409075000155",
+        "email": "mat@gmail.com",
+        "estado": "SP",
+        "id": 1,
+        "nomeFantasia": "Ibuna",
+        "razaoSocial": "Ibituruna Ltda",
+        "telefone": "3133334444"
+    },
+    "funcionario": {
+        "bairro": "Centro",
+        "cargo": {
+            "ativo": true,
+            "descricao": "Cargo de analista de crédito bancário",
+            "id": 1,
+            "nome": "Analista",
+            "salarioBase": 2000
+        },
+        "cep": "35160-000",
+        "cidade": "Ipatinga",
+        "complemento": "Casa",
+        "cpf": "12345678901",
+        "dataAdmissao": "2026-07-15",
+        "dataCadastro": "2026-07-20",
+        "dataDemissao": null,
+        "dataNascimento": "1995-05-20",
+        "departamento": {
+            "ativo": true,
+            "descricao": "Dpto de vendas",
+            "id": 1,
+            "nome": "Vendas"
+        },
+        "email": "joao.silva@email.com",
+        "estado": "MG",
+        "estadoCivil": "CASADO",
+        "id": 2,
+        "logradouro": "Rua Principal",
+        "matricula": "FUNC0001",
+        "nome": "João da Silva",
+        "numero": "150",
+        "rg": "MG1234567",
+        "salario": 4500,
+        "sexo": "MASCULINO",
+        "status": "ATIVO",
+        "telefone": "(31) 99999-8888",
+        "ultimaAtualizacao": "2026-07-20"
+    },
+    "id": 16,
+    "itens": [
+        {
+            "id": 15,
+            "produto": {
+                "categoria": {
+                    "descricao": "Categoria de Laticinios",
+                    "id": 2,
+                    "nome": "Laticinios"
+                },
+                "descricao": "Leita longa vida 1L",
+                "estoque": 283,
+                "estoqueMinimo": null,
+                "fornecedor": {
+                    "cidade": "Espirito Santo",
+                    "cnpj": "60409075000155",
+                    "email": "mat@gmail.com",
+                    "estado": "SP",
+                    "id": 1,
+                    "nomeFantasia": "Ibuna",
+                    "razaoSocial": "Ibituruna Ltda",
+                    "telefone": "3133334444"
+                },
+                "id": 3,
+                "nome": "Leite longa vida",
+                "precoCompra": 6.2,
+                "precoVenda": 9
+            },
+            "quantidade": 10,
+            "subtotal": 62,
+            "valorUnitario": 6.2
+        }
+    ],
+    "observacoes": "Compra de leite",
+    "status": "FINALIZADA",
+    "valorTotal": 62
+}

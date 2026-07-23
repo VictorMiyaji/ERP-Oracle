@@ -1,0 +1,267 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "fornecedorSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "Fornecedores/getApiFornecedores",
+        "responseType": "getApiFornecedores",
+        "itemsPath": "content",
+        "keyAttributes": "id"
+      }
+    },
+    "funcionarioSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "Funcionarios/getApiFuncionarios",
+        "responseType": "getApiFuncionarios",
+        "itemsPath": "content",
+        "keyAttributes": "id"
+      }
+    },
+    "pedidoCompra": {
+      "type": "object",
+      "defaultValue": {
+        "fornecedorId": null,
+        "funcionarioId": null,
+        "observacoes": "",
+        "itens": [
+          {
+            "produtoId": null,
+            "quantidade": 1
+          }
+        ]
+      }
+    },
+    "produtoSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "Produtos/getApiProdutos",
+        "responseType": "getApiProdutos",
+        "itemsPath": "content",
+        "keyAttributes": "id"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getApiFornecedores": {
+      "endpoint": "getApiFornecedores",
+      "service": "Fornecedores",
+      "path": "response"
+    },
+    "@decorators.getApiFuncionarios": {
+      "endpoint": "getApiFuncionarios",
+      "service": "Funcionarios",
+      "path": "response"
+    },
+    "@decorators.getApiProdutos": {
+      "endpoint": "getApiProdutos",
+      "service": "Produtos",
+      "path": "response"
+    },
+    "getApiFornecedores": {
+      "content": [
+        {
+          "cidade": "string",
+          "cnpj": "string",
+          "email": "string",
+          "estado": "string",
+          "id": "number",
+          "nomeFantasia": "string",
+          "razaoSocial": "string",
+          "telefone": "string"
+        }
+      ],
+      "empty": "boolean",
+      "first": "boolean",
+      "last": "boolean",
+      "number": "number",
+      "numberOfElements": "number",
+      "pageable": {
+        "offset": "number",
+        "paged": "boolean",
+        "pageNumber": "number",
+        "pageSize": "number",
+        "sort": {
+          "empty": "boolean",
+          "sorted": "boolean",
+          "unsorted": "boolean"
+        },
+        "unpaged": "boolean"
+      },
+      "size": "number",
+      "sort": {
+        "empty": "boolean",
+        "sorted": "boolean",
+        "unsorted": "boolean"
+      },
+      "totalElements": "number",
+      "totalPages": "number"
+    },
+    "getApiFuncionarios": {
+      "content": [
+        {
+          "bairro": "string",
+          "cargo": {
+            "ativo": "boolean",
+            "descricao": "string",
+            "id": "number",
+            "nome": "string",
+            "salarioBase": "number"
+          },
+          "cep": "string",
+          "cidade": "string",
+          "complemento": "string",
+          "cpf": "string",
+          "dataAdmissao": "string",
+          "dataCadastro": "string",
+          "dataDemissao": "any",
+          "dataNascimento": "string",
+          "departamento": {
+            "ativo": "boolean",
+            "descricao": "string",
+            "id": "number",
+            "nome": "string"
+          },
+          "email": "string",
+          "estado": "string",
+          "estadoCivil": "string",
+          "id": "number",
+          "logradouro": "string",
+          "matricula": "string",
+          "nome": "string",
+          "numero": "string",
+          "rg": "string",
+          "salario": "number",
+          "sexo": "string",
+          "status": "string",
+          "telefone": "string",
+          "ultimaAtualizacao": "string"
+        }
+      ],
+      "empty": "boolean",
+      "first": "boolean",
+      "last": "boolean",
+      "number": "number",
+      "numberOfElements": "number",
+      "pageable": {
+        "offset": "number",
+        "paged": "boolean",
+        "pageNumber": "number",
+        "pageSize": "number",
+        "sort": {
+          "empty": "boolean",
+          "sorted": "boolean",
+          "unsorted": "boolean"
+        },
+        "unpaged": "boolean"
+      },
+      "size": "number",
+      "sort": {
+        "empty": "boolean",
+        "sorted": "boolean",
+        "unsorted": "boolean"
+      },
+      "totalElements": "number",
+      "totalPages": "number"
+    },
+    "getApiProdutos": {
+      "content": [
+        {
+          "categoria": {
+            "descricao": "string",
+            "id": "number",
+            "nome": "string"
+          },
+          "descricao": "string",
+          "estoque": "number",
+          "estoqueMinimo": "number",
+          "fornecedor": {
+            "cidade": "string",
+            "cnpj": "string",
+            "email": "string",
+            "estado": "string",
+            "id": "number",
+            "nomeFantasia": "string",
+            "razaoSocial": "string",
+            "telefone": "string"
+          },
+          "id": "number",
+          "nome": "string",
+          "precoCompra": "number",
+          "precoVenda": "number"
+        }
+      ],
+      "empty": "boolean",
+      "first": "boolean",
+      "last": "boolean",
+      "number": "number",
+      "numberOfElements": "number",
+      "pageable": {
+        "offset": "number",
+        "paged": "boolean",
+        "pageNumber": "number",
+        "pageSize": "number",
+        "sort": {
+          "empty": "boolean",
+          "sorted": "boolean",
+          "unsorted": "boolean"
+        },
+        "unpaged": "boolean"
+      },
+      "size": "number",
+      "sort": {
+        "empty": "boolean",
+        "sorted": "boolean",
+        "unsorted": "boolean"
+      },
+      "totalElements": "number",
+      "totalPages": "number"
+    }
+  },
+  "eventListeners": {
+
+    "buttonAction6": {
+      "chains": [
+        {
+          "chain": "criarPedidoAction"
+        }
+      ]
+    },
+    "buttonAction7": {
+      "chains": [
+        {
+          "chain": "VoltarParaCompras"
+        }
+      ]
+    },
+    "flexRowClick": {
+      "chains": [
+        {
+          "chain": "FlexRowClickChain",
+          "parameters": {
+            "event": "{{$event}}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      }
+    }
+  }
+}

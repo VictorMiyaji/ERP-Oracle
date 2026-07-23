@@ -1,0 +1,92 @@
+<!-- vb default-layout:flex -->
+<!-- Copyright (c) 2026, Oracle and/or its affiliates -->
+
+<div class="oj-flex oj-sm-flex-direction-column" style="background-color: #0F172A; padding: 32px 40px; box-sizing: border-box;">
+  <div class="oj-flex-item" style="margin-block: 30px;">
+    <h1 class="oj-typography-heading-md oj-typography-bold" style="margin: 0; color:#FBBF24; font-size: 26px;">
+      Painel de Pedidos
+    </h1>
+  </div>
+  <div class="oj-flex-item" style="margin-bottom: 30px;">
+    <div class="oj-flex"
+      style="gap: 8px; background-color: #ffffff; border: 1px solid #E4E4E7; border-radius: 12px; padding: 6px; width: fit-content; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom:60px;">
+      <oj-button label="Início" chroming="solid" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+      <oj-button label="Pedidos de Compra" chroming="borderless" on-oj-action="[[$listeners.buttonAction2]]"></oj-button>
+      <oj-button label="Pedidos de Venda" chroming="borderless" on-oj-action="[[$listeners.buttonAction3]]"></oj-button>
+    </div>
+  </div>
+  <div class="oj-flex-item" style="margin-bottom: 32px;">
+    <div class="oj-flex" style="display: flex; flex-direction: row; gap: 24px; width: 100%;">
+      
+      <div style="flex: 1; background: #ffffff; border-radius: 14px; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; min-height: 160px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);">
+        <div>
+          <h2 class="oj-typography-heading-xs oj-typography-bold" style="color: #18181B; margin: 0 0 8px 0; font-size: 18px;">
+            Pedido de Compra
+          </h2>
+          <p class="oj-typography-body-sm" style="color: #71717A; margin: 0 0 20px 0;">
+            Registre um novo pedido de compra junto a um fornecedor.
+          </p>
+        </div>
+        <div>
+          <oj-button label="Ver pedidos" chroming="outlined"  on-oj-action="[[$listeners.buttonAction2]]"></oj-button>
+        </div>
+      </div>
+      <div style="flex: 1; background: #ffffff; border-radius: 14px; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; min-height: 160px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);">
+        <div>
+          <h2 class="oj-typography-heading-xs oj-typography-bold" style="color: #18181B; margin: 0 0 8px 0; font-size: 18px;">
+            Pedido de Venda
+          </h2>
+          <p class="oj-typography-body-sm" style="color: #71717A; margin: 0 0 20px 0;">
+            Registre um novo pedido de venda para um cliente.
+          </p>
+        </div>
+        <div>
+          <oj-button label="Ver pedidos" chroming="outlined" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction3]]" ></oj-button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="oj-flex-item" style="margin-bottom: 24px;">
+    <div class="oj-flex oj-sm-align-items-center" style="gap: 12px;">
+      <span class="oj-typography-body-xs oj-typography-bold" style="text-transform: uppercase; letter-spacing: 0.06em; color: #94A3B8; font-size: 12px;">
+        Resumo geral
+      </span>
+      <div class="oj-flex-item" style="height: 1px; background-color: #334155;"></div>
+    </div>
+  </div>
+
+  <div class="oj-flex-item">
+    <div class="oj-flex" style="display: flex; flex-direction: row; gap: 24px; width: 100%;">
+      <div style="flex: 1; background: #ffffff; border-radius: 14px; padding: 20px 24px; display: flex; align-items: center; gap: 16px; box-sizing: border-box; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);">
+        <div style="width: 44px; height: 44px; border-radius: 10px; background-color: #E9EFFA; color: #2E5EAA; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <span class="oj-ux-ico-cart" style="font-size: 22px;"></span>
+        </div>
+        <div>
+          <div class="oj-typography-heading-md oj-typography-bold" style="color: #18181B; font-size: 24px; line-height: 1;">
+            <oj-bind-text value="[[ $variables.totalCompras ]]"></oj-bind-text>
+          </div>
+          <div class="oj-typography-body-xs" style="color: #71717A; margin-top: 6px;">
+            Total de compras já realizadas
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1; background: #ffffff; border-radius: 14px; padding: 20px 24px; display: flex; align-items: center; gap: 16px; box-sizing: border-box; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);">
+        <div style="width: 44px; height: 44px; border-radius: 10px; background-color: #E6F4EF; color: #1E8064; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <span class="oj-ux-ico-bag" style="font-size: 22px;"></span>
+        </div>
+        <div>
+          <div class="oj-typography-heading-md oj-typography-bold" style="color: #18181B; font-size: 24px; line-height: 1;">
+            <oj-bind-text value="[[ $variables.totalVendas ]]"></oj-bind-text>
+          </div>
+          <div class="oj-typography-body-xs" style="color: #71717A; margin-top: 6px;">
+            Total de pedidos já realizados
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

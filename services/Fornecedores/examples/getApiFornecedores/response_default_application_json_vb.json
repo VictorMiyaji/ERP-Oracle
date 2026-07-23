@@ -1,0 +1,39 @@
+{
+    "content": [
+        {
+            "cidade": "Espirito Santo",
+            "cnpj": "60409075000155",
+            "email": "mat@gmail.com",
+            "estado": "SP",
+            "id": 1,
+            "nomeFantasia": "Ibuna",
+            "razaoSocial": "Ibituruna Ltda",
+            "telefone": "3133334444"
+        }
+    ],
+    "empty": false,
+    "first": true,
+    "last": true,
+    "number": 0,
+    "numberOfElements": 1,
+    "pageable": {
+        "offset": 0,
+        "pageNumber": 0,
+        "pageSize": 10,
+        "paged": true,
+        "sort": {
+            "empty": true,
+            "sorted": false,
+            "unsorted": true
+        },
+        "unpaged": false
+    },
+    "size": 10,
+    "sort": {
+        "empty": true,
+        "sorted": false,
+        "unsorted": true
+    },
+    "totalElements": 1,
+    "totalPages": 1
+}

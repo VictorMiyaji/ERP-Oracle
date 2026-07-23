@@ -1,0 +1,42 @@
+<!-- vb default-layout:flex -->
+<!-- Copyright (c) 2026, Oracle and/or its affiliates -->
+
+<div class="oj-flex oj-sm-flex-direction-column" style=" box-sizing: border-box; gap: 24px; padding:40px 60px;">
+
+  <div class="oj-flex oj-sm-align-items-center" style="margin-bottom: 10px;">
+    <oj-button
+      display="icons"
+      chroming="borderless"
+      title="Voltar" on-oj-action="[[$listeners.buttonAction3]]">
+
+      <span slot="startIcon" class="oj-ux-ico-arrow-left"style="color:white;" aria-label="Voltar"></span>
+    </oj-button>
+  </div>
+  <div class="oj-flex oj-sm-align-items-center oj-sm-justify-content-space-between"
+    style='width: 100%; font-family: "Roboto", sans-serif;'>
+    <h1 class="oj-typography-heading-md oj-typography-bold" style="margin: 0; color: #F1F5F9 ; font-size: 40px;">
+      Compras
+    </h1>
+    <oj-button label="Criar Pedido" chroming="solid" on-oj-action="[[$listeners.buttonAction2]]"
+      style="background:#FBBF24; color:white; border-radius:5px;" class="oj-sm-align-self-center"></oj-button>
+  </div>
+  <div class="oj-flex" style="width: 100%;">
+    <oj-input-search value="{{ $variables.textoBusca }}" 
+                     placeholder="Digite o ID" 
+                     style="max-width: 320px; width: 100%;">
+    </oj-input-search>
+  </div>
+  <div class="oj-panel oj-panel-rounded-12" style="background: #ffffff; padding: 16px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); width: 100%; box-sizing: border-box;">
+    <oj-table scroll-policy="loadMoreOnScroll" 
+              data="{{ $variables.comprasADP }}"
+              style="width: 100%; height: 400px;"
+              columns='[{"headerText":"id","field":"id"},{"headerText":"dataCompra","field":"dataCompra"},{"headerText":"fornecedorNome","field":"fornecedorNome"},{"headerText":"funcionarioNome","field":"funcionarioNome"},{"headerText":"observacoes","field":"observacoes"},{"headerText":"status","field":"status"},{"headerText":"valorTotal","field":"valorTotal"},{"headerText":"Ações","field":"","template":"Ações"}]'>
+      <template slot="Ações">
+        <oj-button display="icons" chroming="borderless" on-oj-action="[[$listeners.buttonAction]]" title="Excluir">
+          <span slot="startIcon" class="oj-ux-ico-trash" style="color:red;"></span>
+          Excluir
+        </oj-button>
+      </template>
+    </oj-table>
+  </div>
+</div>

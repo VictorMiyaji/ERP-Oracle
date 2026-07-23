@@ -1,0 +1,236 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "KMPG API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/KMPG-API",
+            "description": "KMPG API"
+        }
+    ],
+    "paths": {
+        "/api/funcionarios": {
+            "get": {
+                "operationId": "getApiFuncionarios",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiFuncionarios"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getApiFuncionarios/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetApiFuncionarios": {
+                "type": "object",
+                "properties": {
+                    "content": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "bairro": {
+                                    "type": "string"
+                                },
+                                "cargo": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ativo": {
+                                            "type": "boolean"
+                                        },
+                                        "descricao": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "nome": {
+                                            "type": "string"
+                                        },
+                                        "salarioBase": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "cep": {
+                                    "type": "string"
+                                },
+                                "cidade": {
+                                    "type": "string"
+                                },
+                                "complemento": {
+                                    "type": "string"
+                                },
+                                "cpf": {
+                                    "type": "string"
+                                },
+                                "dataAdmissao": {
+                                    "type": "string"
+                                },
+                                "dataCadastro": {
+                                    "type": "string"
+                                },
+                                "dataDemissao": {
+                                    "nullable": true
+                                },
+                                "dataNascimento": {
+                                    "type": "string"
+                                },
+                                "departamento": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ativo": {
+                                            "type": "boolean"
+                                        },
+                                        "descricao": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "nome": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "email": {
+                                    "type": "string"
+                                },
+                                "estado": {
+                                    "type": "string"
+                                },
+                                "estadoCivil": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "logradouro": {
+                                    "type": "string"
+                                },
+                                "matricula": {
+                                    "type": "string"
+                                },
+                                "nome": {
+                                    "type": "string"
+                                },
+                                "numero": {
+                                    "type": "string"
+                                },
+                                "rg": {
+                                    "type": "string"
+                                },
+                                "salario": {
+                                    "type": "integer"
+                                },
+                                "sexo": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "telefone": {
+                                    "type": "string"
+                                },
+                                "ultimaAtualizacao": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "empty": {
+                        "type": "boolean"
+                    },
+                    "first": {
+                        "type": "boolean"
+                    },
+                    "last": {
+                        "type": "boolean"
+                    },
+                    "number": {
+                        "type": "integer"
+                    },
+                    "numberOfElements": {
+                        "type": "integer"
+                    },
+                    "pageable": {
+                        "type": "object",
+                        "properties": {
+                            "offset": {
+                                "type": "integer"
+                            },
+                            "pageNumber": {
+                                "type": "integer"
+                            },
+                            "pageSize": {
+                                "type": "integer"
+                            },
+                            "paged": {
+                                "type": "boolean"
+                            },
+                            "sort": {
+                                "type": "object",
+                                "properties": {
+                                    "empty": {
+                                        "type": "boolean"
+                                    },
+                                    "sorted": {
+                                        "type": "boolean"
+                                    },
+                                    "unsorted": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "unpaged": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "size": {
+                        "type": "integer"
+                    },
+                    "sort": {
+                        "type": "object",
+                        "properties": {
+                            "empty": {
+                                "type": "boolean"
+                            },
+                            "sorted": {
+                                "type": "boolean"
+                            },
+                            "unsorted": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "totalElements": {
+                        "type": "integer"
+                    },
+                    "totalPages": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

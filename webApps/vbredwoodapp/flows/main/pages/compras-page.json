@@ -1,0 +1,109 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "comprasADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "compraItem",
+        "keyAttributes": "id",
+        "filterCriterion": {
+          "op": "$co",
+          "attribute": "id",
+          "value": "{{ $variables.textoBusca }}"
+        },
+        "textFilterAttributes": [
+          "id"
+        ]
+      }
+    },
+    "textoBusca": {
+      "type": "string",
+      "defaultValue": "",
+      "onValueChanged": {
+        "chains": [
+          {
+            "parameters": {
+              "event": "{{ $event }}"
+            },
+            "chain": "filtrarComprasChain"
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "compraItem": {
+      "dataCompra": "string",
+      "fornecedorId": "number",
+      "fornecedorNome": "string",
+      "funcionarioId": "number",
+      "funcionarioNome": "string",
+      "id": "string",
+      "observacoes": "string",
+      "status": "string",
+      "valorTotal": "number"
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "excluirCompraChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "voltarParaHome",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "carregarComprasChain",
+          "parameters": {}
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+    }
+  }
+}

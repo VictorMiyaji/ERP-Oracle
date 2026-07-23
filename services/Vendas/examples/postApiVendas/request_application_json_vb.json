@@ -1,0 +1,10 @@
+{
+  "clienteId": 23,
+  "funcionarioId": 2,
+  "formaPagamento": "DINHEIRO",
+  "desconto": 0,
+  "observacoes": "teste2",
+  "itens": [
+    { "produtoId": 3, "quantidade": 1, "precoUnitario": 9.0 }
+  ]
+}

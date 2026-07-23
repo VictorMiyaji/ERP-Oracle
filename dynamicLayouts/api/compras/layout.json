@@ -1,0 +1,39 @@
+{
+  "layoutTypes": {
+    "Compras": {
+      "kind": "operationRef",
+      "serviceId": "Compras",
+      "operations": [
+        "getApiCompras"
+      ]
+    }
+  },
+  "layouts": {
+    "isDefault": {
+      "description": "Default Rule",
+      "type": "Compras",
+      "expression": "default"
+    },
+    "compras": {
+      "type": "Compras",
+      "layoutType": "form",
+      "label": "Compras",
+      "rules": [
+        "isDefault"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "totalElements",
+              "numberOfElements"
+            ],
+            "readonly": true
+          }
+        }
+      }
+    }
+  },
+  "templates": {}
+}

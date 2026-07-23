@@ -1,0 +1,14 @@
+[
+    {
+        "produtoId": 3,
+        "produtoNome": "Leite longa vida",
+        "quantidadeComprada": 43,
+        "valorTotalComprado": 266.59999999999997
+    },
+    {
+        "produtoId": 4,
+        "produtoNome": "Leita longa Ibituruna",
+        "quantidadeComprada": 14,
+        "valorTotalComprado": 59.5
+    }
+]

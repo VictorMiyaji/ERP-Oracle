@@ -1,0 +1,12 @@
+{
+    "fornecedorId": 1,
+    "funcionarioId": 2,
+    "observacoes": "Compra de leite",
+
+    "itens": [
+        {
+            "produtoId": 4,
+            "quantidade": 10
+        }
+    ]
+}

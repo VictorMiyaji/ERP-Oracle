@@ -1,0 +1,27 @@
+{
+  "component-dependencies": {
+    "oj-sp": {
+      "version": "2604.1.0",
+      "components": {
+        "messages-banner": "2604.1.0",
+        "messages-toast": "2604.1.0",
+        "card": "2604.1.0",
+        "simple-create-edit": "2604.1.0",
+        "message-unsaved-changes": "2604.1.0",
+        "welcome-page": "2604.1.0"
+      }
+    },
+    "oj-dyn": {
+      "version": "2604.1.0",
+      "components": {
+        "form": "2604.1.0"
+      }
+    },
+    "oj-dynamic": {
+      "version": "2604.1.0",
+      "components": {
+        "form": "2604.1.0"
+      }
+    }
+  }
+}
