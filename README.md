@@ -26,8 +26,6 @@ O sistema possui as seguintes funcionalidades:
   - Botão para criar pedido
   - Botão para excluir pedido
 
-- Cadastro de novos pedidos.
-
 - Após salvar um pedido, o usuário é redirecionado para a tela de listagem.
 
 ---
